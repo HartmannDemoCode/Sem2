@@ -1,0 +1,7 @@
+This is a demo project to show how to:
+1. Upload a picture from a web page and insert into database.
+2. Get a picture from a database and show it with a servlet (ImageViewer) using contenttype: image/jpg
+3. Show many pictures in a servlet (using the ImageViewer servlet). This is in the file: ShowImages.java 
+4. show many pictures in a jsp page (also using the ImageViewer servlet). This is in the file: showImages.jsp
+5. show an html page as pdf using a third party library
+

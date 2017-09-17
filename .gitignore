@@ -1,0 +1,17 @@
+/DataMapper/build/
+/DataMapper/nbproject/private/
+/DataSourceDemo/build/
+/DataSourceDemo/dist/
+/DataSourceDemo/nbproject/private/
+/Demoproject/AuthDemo/build/
+/Demoproject/AuthDemo/nbproject/private/
+/JDBC Demo Mysql/build/
+/JDBC Demo Mysql/dist/
+/JDBC Demo Mysql/nbproject/private/
+/ServletDemo/build/
+/ServletDemo/dist/
+/ServletDemo/nbproject/private/
+/UploadFileDemo/build/
+/UploadFileDemo/nbproject/private/
+/jsdemo/nbproject/private/
+/DataMapper/target/
