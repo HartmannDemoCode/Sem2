@@ -22,8 +22,8 @@ public class CallbackInJava {
     //In java an equivilent would be (not using lambda) to use an object
     public static void main(String[] args) {
         String[] strs = {"Andy", "Beatrice", "Charles", "Dorthea", "Eric", "Beatles"};
-        Filter min5 = new FilterByMinLength5();
-        String[] result1 = filter(strs, min5);
+        Filter minLength5 = new FilterByMinLength5();
+        String[] result1 = filter(strs, minLength5);
         for (String string : result1) {
             System.out.println(string);
         }
@@ -32,7 +32,8 @@ public class CallbackInJava {
         String[] result2 = filter(strs, new Filter(){
             @Override
             public boolean validate(String element) {
-                return element.startsWith("Bea");
+                //return element.startsWith("Bea");
+                return myValidate(element);
             }
         });
         for (String string : result2) {
@@ -40,10 +41,14 @@ public class CallbackInJava {
         }
         System.out.println("-------------------------------Now filter on words containing 'a'------------------------------");
         //Here we use Lambda expression
-        String[] result3 = filter(strs, (str)-> str.contains("a"));
+        int[] ints = {1, 2, 3, 4, 5};
+        String[] result3 = filter(strs, (element)-> element.contains("a"));
         for (String string : result3) {
             System.out.println(string);
         }
+    }
+    private static boolean myValidate(String str){
+        return str.endsWith("les");
     }
     
     // filter method here uses a functional interface (interface with only one method). It can then be used with lambda expressions
@@ -57,7 +62,7 @@ public class CallbackInJava {
         return filtered.toArray(new String[0]);
     }
     
-    
+  //----------------------------------------------------------------------------------------------  
     
     
     private static class FilterByMinLength5 implements Filter{
