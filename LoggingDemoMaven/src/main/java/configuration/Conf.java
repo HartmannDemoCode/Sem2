@@ -6,14 +6,13 @@
 package configuration;
 
 import java.util.logging.Logger;
-import servlets.DemoServlet;
 
 /**
  *
  * @author tha
  */
 public class Conf {
-    public static final boolean PRODUCTION = true;
+    public static final boolean PRODUCTION = false;
     public static final String LOGFILEPATH = "/var/log/tomcat8/demoApp.log";
-    public static Logger myLogger = Logger.getLogger("");
+    public static final Logger MYLOGGER = Logger.getLogger("");
 }

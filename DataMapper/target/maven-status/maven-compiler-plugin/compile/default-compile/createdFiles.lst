@@ -1,0 +1,6 @@
+domain/Phone.class
+data/IPersonMapper.class
+domain/Person.class
+data/PersonMapperDetailed.class
+data/PersonMapperSimple.class
+data/DB.class

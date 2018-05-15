@@ -39,7 +39,7 @@ public class LoggingInServlet extends HttpServlet {
         //This method is bound to the servlet and is therefore less flexible if e.g. the presentation layer is changed:
 //        getServletContext().log("TEST LOGGGING----------------------------!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-----------------------");
         //System.out should be printed on ubuntu server to: /var/log/tomcat8/catalina.out:
-//        System.out.println("TEST IF this goes into CATALINAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.out");
+        System.out.println("TEST IF this goes into CATALINAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.out");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");

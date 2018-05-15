@@ -1,8 +1,7 @@
-servlets\DemoServlet.class
-configuration\Conf.class
-loggingdemo\LoggingDemo.class
-servlets\LoggingInServlet.class
-loggingdemo\LoggingDemo$MyFormatter.class
-dataaccess\DataMapper.class
-domain\logic\Demo.class
-domain\exceptions\MyCustomException.class
+servlets/DemoServlet.class
+loggingdemo/LoggingDemo.class
+configuration/Conf.class
+dataaccess/DataMapper.class
+domain/logic/Demo.class
+servlets/LoggingInServlet.class
+domain/exceptions/MyCustomException.class

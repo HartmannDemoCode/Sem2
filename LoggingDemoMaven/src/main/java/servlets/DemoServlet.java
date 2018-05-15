@@ -13,7 +13,6 @@ import java.io.PrintWriter;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,18 +40,18 @@ public class DemoServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-            Conf.myLogger.addHandler(new ConsoleHandler());
+            Conf.MYLOGGER.addHandler(new ConsoleHandler());
                if(Conf.PRODUCTION){
                    FileHandler fileHandler = new FileHandler(Conf.LOGFILEPATH);
                    fileHandler.setFormatter(new SimpleFormatter());
-                    Conf.myLogger.addHandler(fileHandler);
+                    Conf.MYLOGGER.addHandler(fileHandler);
                }
         try (PrintWriter out = response.getWriter()) {
             Demo demo = new Demo();
             try {
                 demo.doSomething();
             } catch (MyCustomException ex) {
-               Conf.myLogger.log(Level.SEVERE, null, ex);
+               Conf.MYLOGGER.log(Level.SEVERE, null, ex);
                request.getSession().setAttribute("error", ex.getMessage());
                request.getRequestDispatcher("errorview.jsp").forward(request, response);
             }

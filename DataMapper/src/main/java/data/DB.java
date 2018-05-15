@@ -31,7 +31,7 @@ public class DB {
     public static void main(String[] args) {
         //Test connection
         try {
-            String sql = "SELECT personid, FirstName, LastName, phone.description, phone.number FROM person, phone WHERE person.personID = phone.person_personID";
+            String sql = "SELECT person.personId, firstName, lastName, phone.description, phone.number FROM person, phone WHERE person.personId = phone.personId";
             ResultSet rs = getConnection().prepareStatement(sql).executeQuery();
             while (rs.next()) {
                 System.out.println(rs.getString("FirstName")+" has no: "+rs.getString("phone.number"));
