@@ -40,18 +40,18 @@ public class DemoServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-            Conf.MYLOGGER.addHandler(new ConsoleHandler());
+            Conf.getLogger().addHandler(new ConsoleHandler());
                if(Conf.PRODUCTION){
                    FileHandler fileHandler = new FileHandler(Conf.LOGFILEPATH);
                    fileHandler.setFormatter(new SimpleFormatter());
-                    Conf.MYLOGGER.addHandler(fileHandler);
+                    Conf.getLogger().addHandler(fileHandler);
                }
         try (PrintWriter out = response.getWriter()) {
             Demo demo = new Demo();
             try {
                 demo.doSomething();
             } catch (MyCustomException ex) {
-               Conf.MYLOGGER.log(Level.SEVERE, null, ex);
+               Conf.getLogger().log(Level.SEVERE, null, ex);
                request.getSession().setAttribute("error", ex.getMessage());
                request.getRequestDispatcher("errorview.jsp").forward(request, response);
             }

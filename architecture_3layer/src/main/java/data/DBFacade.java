@@ -1,5 +1,6 @@
 package data;
 
+import domain.entity.ArchitectureException;
 import domain.entity.Customer;
 import domain.entity.Employee;
 import domain.entity.Order;
@@ -15,7 +16,7 @@ public class DBFacade implements IDBFacade{
     OrderMapper om = new OrderMapper();
     
     @Override
-    public Customer getCustomer(int id) {
+    public Customer getCustomer(int id) throws ArchitectureException {
         return cm.getCustomer(id);
     }
 

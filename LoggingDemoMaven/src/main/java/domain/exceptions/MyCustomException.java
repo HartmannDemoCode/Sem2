@@ -10,11 +10,8 @@ package domain.exceptions;
  * @author tha
  */
 public class MyCustomException extends Exception {
-
-    /**
-     * Creates a new instance of <code>MyCustomException</code> without detail
-     * message.
-     */
+    
+    private Exception ex;
     public MyCustomException() {
     }
 
@@ -24,7 +21,8 @@ public class MyCustomException extends Exception {
      *
      * @param msg the detail message.
      */
-    public MyCustomException(String msg) {
+    public MyCustomException(String msg, Exception ex) {
         super(msg);
+        this.ex = ex;
     }
 }
