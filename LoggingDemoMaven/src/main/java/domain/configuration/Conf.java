@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package configuration;
+package domain.configuration;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -22,6 +22,7 @@ import loggingdemo.LoggingDemo;
 public class Conf {
 
     public static final boolean PRODUCTION = false;
+<<<<<<< HEAD:LoggingDemoMaven/src/main/java/configuration/Conf.java
     public static final String LOGFILEPATH = "/var/log/tomcat8/demoApp.log";
     private static Logger logger;
     private static Logger loggerST;
@@ -96,4 +97,9 @@ public class Conf {
             );
         }
     }
+=======
+    public static final String LOG_FILE_PATH = "/var/log/tomcat8/demoApp.log";
+    public static final String LOG_FILE_PATH_DEVELOP = "/home/thomas/loggingdemo.log";
+//    public static final Logger MYLOGGER = Logger.getLogger("");
+>>>>>>> loggingdemo:LoggingDemoMaven/src/main/java/domain/configuration/Conf.java
 }

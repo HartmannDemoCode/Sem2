@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 loggingdemo/LoggingDemo.class
 configuration/Conf$1.class
+=======
+>>>>>>> loggingdemo
 dataaccess/DataMapper.class
 configuration/Conf$VerySimpleFormatter.class
 domain/logic/Demo.class
