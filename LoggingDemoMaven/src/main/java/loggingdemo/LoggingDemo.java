@@ -5,7 +5,7 @@
  */
 package loggingdemo;
 
-import configuration.Conf;
+import domain.configuration.Conf;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,28 +18,32 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author tha
- * Purpose: Show how to use the java.util.logging API.
- * Suggestion: Make a Logger object for each class that needs to be logged. Make the logger object static and final so all instances of the class will use the same logger instance.
- * Logger.getLogger(LoggingExamples.class.getName());
- * It is common practice to use the class name including package name as name for the Logger. The name of the Logger to create is passed as string parameter to the Logger.getLogger() method.
- * logger.addHandler() is how we add handlers that can write to console (Default) and a textfile, a network server...
+ * @author tha Purpose: Show how to use the java.util.logging API. Suggestion:
+ * Make a Logger object for each class that needs to be logged. Make the logger
+ * object static and final so all instances of the class will use the same
+ * logger instance. Logger.getLogger(LoggingExamples.class.getName()); It is
+ * common practice to use the class name including package name as name for the
+ * Logger. The name of the Logger to create is passed as string parameter to the
+ * Logger.getLogger() method. logger.addHandler() is how we add handlers that
+ * can write to console (Default) and a textfile, a network server...
  */
 public class LoggingDemo {
-    
-    static final Logger LOGGER = Conf.getLogger();
-    
+
+//    static final Logger LOGGER = Conf.getLogger();
+
     public static void main(String[] args) throws IOException {
-       LoggingDemo ld = new LoggingDemo();
-       ld.run();
+        LoggingDemo ld = new LoggingDemo();
+        ld.run();
     }
-    public void run() throws IOException{
+
+    public void run() throws IOException {
         //Just log a message.
 //        addHandlers();
-    try{
-        LOGGER.log(Level.OFF, "Only this message will be logged");
-    }catch(Exception ex){
-ex.printStackTrace();    }
+        try {
+//            LOGGER.log(Level.OFF, "Only this message will be logged");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
         //Log a message: First anounce sevirity level, then the message and then a list of objects to be inserted in the message.
 //        LOGGER.log(Level.SEVERE, "This is the {0} to be {1}", new Object[]{"message", "logged"});
 //        //Log a Throwable
@@ -61,10 +65,10 @@ ex.printStackTrace();    }
 //            handler.setFormatter(new VerySimpleFormatter());
 //            LOGGER.addHandler(handler);
 //        }
-        //Also available is:
-        //StreamHandler - writes the log to any outputstream
-        //SocketHandler - writes the log over TCP to a network host
-        //MemoryHandler - keeps the log in memory like a buffer untill the buffer is full and then writes the log to a target handler.
+    //Also available is:
+    //StreamHandler - writes the log to any outputstream
+    //SocketHandler - writes the log over TCP to a network host
+    //MemoryHandler - keeps the log in memory like a buffer untill the buffer is full and then writes the log to a target handler.
 //    }
 //    private Logger createHierachyOfLoggers(){
 //        //This will create 4 loggers: The empty string logger is the root and the others are children of each other
@@ -75,7 +79,7 @@ ex.printStackTrace();    }
 //        Logger logger3 = Logger.getLogger("dk.cphbusiness.logdemo"); logger3.addHandler(new ConsoleHandler());
 //        return logger3;
 //    }
-    
+
 //    private class VerySimpleFormatter extends Formatter {
 //        private static final String PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX";
 //    @Override

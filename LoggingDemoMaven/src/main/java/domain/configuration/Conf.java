@@ -22,84 +22,82 @@ import loggingdemo.LoggingDemo;
 public class Conf {
 
     public static final boolean PRODUCTION = false;
-<<<<<<< HEAD:LoggingDemoMaven/src/main/java/configuration/Conf.java
-    public static final String LOGFILEPATH = "/var/log/tomcat8/demoApp.log";
-    private static Logger logger;
-    private static Logger loggerST;
-    
-
-    public static Logger getLogger() {
-        if (logger == null) {
-            logger = Logger.getLogger("");
-            if (configuration.Conf.PRODUCTION) {
-                try {
-                    FileHandler handler = new FileHandler(configuration.Conf.LOGFILEPATH);
-                    handler.setFormatter(new VerySimpleFormatter());
-                    logger.addHandler(handler);
-                } catch (IOException ex) {
-                    System.out.println(ex.getMessage());
-                }
-            } else {
-                try {
-                    FileHandler handler = new FileHandler("Logging-Demo-log.%u.%g.txt"); // see: http://tutorials.jenkov.com/java-logging/handlers.html
-                    handler.setFormatter(new VerySimpleFormatter());
-                    logger.addHandler(handler);
-                } catch (IOException ex) {
-                    Logger.getLogger(Conf.class.getName()).log(Level.SEVERE, null, ex);
-                } 
-            }
-        }
-        return logger;
-    }
-    
-    public static Logger getLoggerWithStackTrace() {
-        if (loggerST == null) {
-            loggerST = Logger.getLogger("Stack Trace Logger");
-            try {
-                    FileHandler handler = new FileHandler("loggingDemo-log.%u.%g.txt");
-                    handler.setFormatter(new StackTraceFormatter());
-                    logger.addHandler(handler);
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                } 
-            }
-        return logger;
-    }
-    
-    
-    
-    private static class VerySimpleFormatter extends Formatter{
-        String datePattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX";
-        @Override
-        public String format(LogRecord record) {
-            return String.format(
-                "%1$s %2$-7s %3$s\n",
-                new SimpleDateFormat(datePattern).format(
-                    new Date(record.getMillis())
-                ),
-                record.getLevel().getName(),
-                formatMessage(record)
-            );
-        }
-    }
-    private static class StackTraceFormatter extends Formatter{
-        String datePattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX";
-        @Override
-        public String format(LogRecord record) {
-            return String.format(
-                "%1$s %2$-7s %3$s %4$s\n",
-                new SimpleDateFormat(datePattern).format(
-                    new Date(record.getMillis())
-                ),
-                record.getLevel().getName(),
-                formatMessage(record),
-                record.getThrown().toString()
-            );
-        }
-    }
-=======
     public static final String LOG_FILE_PATH = "/var/log/tomcat8/demoApp.log";
     public static final String LOG_FILE_PATH_DEVELOP = "/home/thomas/loggingdemo.log";
-//    public static final Logger MYLOGGER = Logger.getLogger("");
->>>>>>> loggingdemo:LoggingDemoMaven/src/main/java/domain/configuration/Conf.java
+//    private static Logger logger;
+//    private static Logger loggerST;
+//    
+//
+//    public static Logger getLogger() {
+//        if (logger == null) {
+//            logger = Logger.getLogger("");
+//            if (configuration.Conf.PRODUCTION) {
+//                try {
+//                    FileHandler handler = new FileHandler(configuration.Conf.LOGFILEPATH);
+//                    handler.setFormatter(new VerySimpleFormatter());
+//                    logger.addHandler(handler);
+//                } catch (IOException ex) {
+//                    System.out.println(ex.getMessage());
+//                }
+//            } else {
+//                try {
+//                    FileHandler handler = new FileHandler("Logging-Demo-log.%u.%g.txt"); // see: http://tutorials.jenkov.com/java-logging/handlers.html
+//                    handler.setFormatter(new VerySimpleFormatter());
+//                    logger.addHandler(handler);
+//                } catch (IOException ex) {
+//                    Logger.getLogger(Conf.class.getName()).log(Level.SEVERE, null, ex);
+//                } 
+//            }
+//        }
+//        return logger;
+//    }
+//    
+//    public static Logger getLoggerWithStackTrace() {
+//        if (loggerST == null) {
+//            loggerST = Logger.getLogger("Stack Trace Logger");
+//            try {
+//                    FileHandler handler = new FileHandler("loggingDemo-log.%u.%g.txt");
+//                    handler.setFormatter(new StackTraceFormatter());
+//                    logger.addHandler(handler);
+//                } catch (IOException ex) {
+//                    ex.printStackTrace();
+//                } 
+//            }
+//        return logger;
+//    }
+//    
+//    
+//    
+//    private static class VerySimpleFormatter extends Formatter{
+//        String datePattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX";
+//        @Override
+//        public String format(LogRecord record) {
+//            return String.format(
+//                "%1$s %2$-7s %3$s\n",
+//                new SimpleDateFormat(datePattern).format(
+//                    new Date(record.getMillis())
+//                ),
+//                record.getLevel().getName(),
+//                formatMessage(record)
+//            );
+//        }
+//    }
+//    private static class StackTraceFormatter extends Formatter{
+//        String datePattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX";
+//        @Override
+//        public String format(LogRecord record) {
+//            return String.format(
+//                "%1$s %2$-7s %3$s %4$s\n",
+//                new SimpleDateFormat(datePattern).format(
+//                    new Date(record.getMillis())
+//                ),
+//                record.getLevel().getName(),
+//                formatMessage(record),
+//                record.getThrown().toString()
+//            );
+//        }
+//    }
+
+
+
 }

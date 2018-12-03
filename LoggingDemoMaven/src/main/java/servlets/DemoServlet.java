@@ -5,17 +5,13 @@
  */
 package servlets;
 
+import dataaccess.DataMapper;
 import domain.configuration.Conf;
 import domain.exceptions.MyCustomException;
 import domain.logging.DefaultLogger;
 import domain.logic.Demo;
 import java.io.IOException;
 import java.util.logging.Level;
-<<<<<<< HEAD
-import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
-=======
->>>>>>> loggingdemo
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,11 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "DemoServlet", urlPatterns = {"/DemoServlet"})
 public class DemoServlet extends HttpServlet {
     //Logger myLogger = Logger.getLogger(DemoServlet.class.getName());
-<<<<<<< HEAD
-    static final Logger LOGGER = Conf.getLogger();
-=======
 
->>>>>>> loggingdemo
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -45,33 +37,15 @@ public class DemoServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-<<<<<<< HEAD
-//            Conf.getLogger().addHandler(new ConsoleHandler());
-//               if(Conf.PRODUCTION){
-//                   FileHandler fileHandler = new FileHandler(Conf.LOGFILEPATH);
-//                   fileHandler.setFormatter(new SimpleFormatter());
-//                    Conf.getLogger().addHandler(fileHandler);
-//               }
-
-            Demo demo = new Demo();
-            try {
-                demo.doSomething();
-            } catch (MyCustomException ex) {
-               LOGGER.log(Level.SEVERE, "Noget gik galt i Demo serletten: {0}", ex.getMessage());
-               Conf.getLoggerWithStackTrace().log(Level.SEVERE, null, ex);
-               request.setAttribute("error", ex.getMessage());
-               request.getRequestDispatcher("errorview.jsp").forward(request, response);
-            }
-=======
-        Demo demo = new Demo();
+        DataMapper dm = new DataMapper();
         try {
-            demo.doSomething();
+            dm.getData();
         } catch (MyCustomException ex) {
             DefaultLogger.getLogger(Conf.PRODUCTION, true).log(Level.SEVERE, null, ex);
-            request.getSession().setAttribute("error", ex.getMessage());
+            request.setAttribute("error", ex.getMessage());
             request.getRequestDispatcher("errorview.jsp").forward(request, response);
         }
->>>>>>> loggingdemo
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
