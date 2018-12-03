@@ -1,7 +1,14 @@
-servlets/DemoServlet.class
 loggingdemo/LoggingDemo.class
-configuration/Conf.class
+configuration/Conf$1.class
 dataaccess/DataMapper.class
+configuration/Conf$VerySimpleFormatter.class
 domain/logic/Demo.class
+loggingdemo/LoggingDemo$1.class
 servlets/LoggingInServlet.class
 domain/exceptions/MyCustomException.class
+configuration/Conf$StackTraceFormatter.class
+servlets/DemoServlet.class
+configuration/Conf.class
+loggingdemo/LoggingDemo$VerySimpleFormatter.class
+domain/entity/User.class
+dataaccess/DB.class

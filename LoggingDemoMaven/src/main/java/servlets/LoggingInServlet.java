@@ -6,13 +6,17 @@ package servlets;
  * and open the template in the editor.
  */
 
+import configuration.Conf;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.core.Context;
 import loggingdemo.LoggingDemo;
 
 /**
@@ -21,7 +25,7 @@ import loggingdemo.LoggingDemo;
  */
 @WebServlet(urlPatterns = {"/LoggingInServlet"})
 public class LoggingInServlet extends HttpServlet {
-
+    @Context
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -35,7 +39,9 @@ public class LoggingInServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         LoggingDemo ld = new LoggingDemo();
+        System.out.println("CONTEXT: "+getServletContext().getRealPath(""));
         ld.run();
+//        run();
         //This method is bound to the servlet and is therefore less flexible if e.g. the presentation layer is changed:
 //        getServletContext().log("TEST LOGGGING----------------------------!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-----------------------");
         //System.out should be printed on ubuntu server to: /var/log/tomcat8/catalina.out:
@@ -52,6 +58,19 @@ public class LoggingInServlet extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
         }
+    }
+    static final Logger LOGGER = Conf.getLogger();
+    public void run() throws IOException{
+        //Just log a message.
+//        addHandlers();
+        LOGGER.log(Level.OFF, "Only this message will be logged");
+        //Log a message: First anounce sevirity level, then the message and then a list of objects to be inserted in the message.
+        LOGGER.log(Level.SEVERE, "This is the {0} to be {1}", new Object[]{"message", "logged"});
+        //Log a Throwable
+        LOGGER.log(Level.SEVERE, "Message to be logged", new RuntimeException("ERROR"));
+        //Log with the hierachy: the chain of responsibility pattern
+//        Logger hierachicalLogger = createHierachyOfLoggers();
+//        hierachicalLogger.log(Level.SEVERE, "hierachical logging message", new RuntimeException("Hierachical logging of exception"));
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

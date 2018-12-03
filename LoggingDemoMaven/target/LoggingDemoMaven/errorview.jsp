@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%=session.getAttribute("error")%>
+        ERROR: <%=request.getAttribute("error")%>
     </body>
 </html>

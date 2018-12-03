@@ -11,7 +11,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import logic.User;
+
 
 /**
  *
@@ -19,7 +19,7 @@ import logic.User;
  */
 public class DB {
     static final String DRIVER = "com.mysql.jdbc.Driver";
-    static final String URL = "jdbc:mysql://localhost/wpss2018e";
+    static final String URL = "jdbc:mysql://localhost/test";
     static final String USERNAME = "root";
     static final String PASSWORD = "root";
     

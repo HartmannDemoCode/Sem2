@@ -18,13 +18,7 @@ import java.util.logging.Logger;
  */
 public class DataMapper {
 
-    public List<String> getData() throws MyCustomException {
-        try {
-            DB.getConnection().prepareStatement("SELECT username, password FROM users");
-        } catch (SQLException ex) {
-            throw new MyCustomException("MyCustomEx message", ex);
-//            Logger.getLogger(DataMapper.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+    public void getData() throws MyCustomException {
+        throw new MyCustomException("MyCustomEx message");
     }
 }

@@ -21,7 +21,7 @@ public class MyCustomException extends Exception {
      *
      * @param msg the detail message.
      */
-    public MyCustomException(String msg, Exception ex) {
+    public MyCustomException(String msg) {
         super(msg);
         this.ex = ex;
     }

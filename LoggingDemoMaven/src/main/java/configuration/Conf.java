@@ -24,6 +24,8 @@ public class Conf {
     public static final boolean PRODUCTION = false;
     public static final String LOGFILEPATH = "/var/log/tomcat8/demoApp.log";
     private static Logger logger;
+    private static Logger loggerST;
+    
 
     public static Logger getLogger() {
         if (logger == null) {
@@ -38,7 +40,7 @@ public class Conf {
                 }
             } else {
                 try {
-                    FileHandler handler = new FileHandler("loggingDemo-log.%u.%g.txt"); // see: http://tutorials.jenkov.com/java-logging/handlers.html
+                    FileHandler handler = new FileHandler("Logging-Demo-log.%u.%g.txt"); // see: http://tutorials.jenkov.com/java-logging/handlers.html
                     handler.setFormatter(new VerySimpleFormatter());
                     logger.addHandler(handler);
                 } catch (IOException ex) {
@@ -48,6 +50,22 @@ public class Conf {
         }
         return logger;
     }
+    
+    public static Logger getLoggerWithStackTrace() {
+        if (loggerST == null) {
+            loggerST = Logger.getLogger("Stack Trace Logger");
+            try {
+                    FileHandler handler = new FileHandler("loggingDemo-log.%u.%g.txt");
+                    handler.setFormatter(new StackTraceFormatter());
+                    logger.addHandler(handler);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                } 
+            }
+        return logger;
+    }
+    
+    
     
     private static class VerySimpleFormatter extends Formatter{
         String datePattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX";
@@ -60,6 +78,21 @@ public class Conf {
                 ),
                 record.getLevel().getName(),
                 formatMessage(record)
+            );
+        }
+    }
+    private static class StackTraceFormatter extends Formatter{
+        String datePattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX";
+        @Override
+        public String format(LogRecord record) {
+            return String.format(
+                "%1$s %2$-7s %3$s %4$s\n",
+                new SimpleDateFormat(datePattern).format(
+                    new Date(record.getMillis())
+                ),
+                record.getLevel().getName(),
+                formatMessage(record),
+                record.getThrown().toString()
             );
         }
     }
