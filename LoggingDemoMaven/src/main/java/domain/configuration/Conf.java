@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package configuration;
+package domain.configuration;
 
 import java.util.logging.Logger;
 
@@ -13,6 +13,7 @@ import java.util.logging.Logger;
  */
 public class Conf {
     public static final boolean PRODUCTION = false;
-    public static final String LOGFILEPATH = "/var/log/tomcat8/demoApp.log";
-    public static final Logger MYLOGGER = Logger.getLogger("");
+    public static final String LOG_FILE_PATH = "/var/log/tomcat8/demoApp.log";
+    public static final String LOG_FILE_PATH_DEVELOP = "/home/thomas/loggingdemo.log";
+//    public static final Logger MYLOGGER = Logger.getLogger("");
 }

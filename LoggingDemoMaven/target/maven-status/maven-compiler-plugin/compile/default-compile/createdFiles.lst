@@ -1,6 +1,3 @@
-servlets/DemoServlet.class
-loggingdemo/LoggingDemo.class
-configuration/Conf.class
 dataaccess/DataMapper.class
 domain/logic/Demo.class
 servlets/LoggingInServlet.class

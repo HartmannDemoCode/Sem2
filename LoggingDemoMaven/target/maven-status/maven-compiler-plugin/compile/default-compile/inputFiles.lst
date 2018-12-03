@@ -1,7 +1,8 @@
-/home/thomas/projects/javaProjects/sem2/_sem2demoCollection/LoggingDemoMaven/src/main/java/domain/logic/Demo.java
-/home/thomas/projects/javaProjects/sem2/_sem2demoCollection/LoggingDemoMaven/src/main/java/configuration/Conf.java
-/home/thomas/projects/javaProjects/sem2/_sem2demoCollection/LoggingDemoMaven/src/main/java/dataaccess/DataMapper.java
-/home/thomas/projects/javaProjects/sem2/_sem2demoCollection/LoggingDemoMaven/src/main/java/servlets/LoggingInServlet.java
-/home/thomas/projects/javaProjects/sem2/_sem2demoCollection/LoggingDemoMaven/src/main/java/servlets/DemoServlet.java
-/home/thomas/projects/javaProjects/sem2/_sem2demoCollection/LoggingDemoMaven/src/main/java/loggingdemo/LoggingDemo.java
-/home/thomas/projects/javaProjects/sem2/_sem2demoCollection/LoggingDemoMaven/src/main/java/domain/exceptions/MyCustomException.java
+/home/thomas/projects/sem2/_sem2demoCollection/LoggingDemoMaven/src/main/java/domain/logging/LoggingDemo.java
+/home/thomas/projects/sem2/_sem2demoCollection/LoggingDemoMaven/src/main/java/domain/logging/DefaultLogger.java
+/home/thomas/projects/sem2/_sem2demoCollection/LoggingDemoMaven/src/main/java/servlets/LoggingInServlet.java
+/home/thomas/projects/sem2/_sem2demoCollection/LoggingDemoMaven/src/main/java/domain/logic/Demo.java
+/home/thomas/projects/sem2/_sem2demoCollection/LoggingDemoMaven/src/main/java/domain/exceptions/MyCustomException.java
+/home/thomas/projects/sem2/_sem2demoCollection/LoggingDemoMaven/src/main/java/domain/configuration/Conf.java
+/home/thomas/projects/sem2/_sem2demoCollection/LoggingDemoMaven/src/main/java/servlets/DemoServlet.java
+/home/thomas/projects/sem2/_sem2demoCollection/LoggingDemoMaven/src/main/java/dataaccess/DataMapper.java
