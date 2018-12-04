@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servlets;
+package presentation;
 
 import dataaccess.DataMapper;
 import domain.configuration.Conf;
 import domain.exceptions.MyCustomException;
 import domain.logging.DefaultLogger;
-import domain.logic.Demo;
+import domain.logic.LogicFacade;
 import java.io.IOException;
 import java.util.logging.Level;
 import javax.servlet.ServletException;

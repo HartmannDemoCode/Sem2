@@ -11,7 +11,7 @@ import domain.exceptions.MyCustomException;
  *
  * @author tha
  */
-public class Demo {
+public class LogicFacade {
     dataaccess.DataMapper dm = new dataaccess.DataMapper();
     public void doSomething() throws MyCustomException{
         dm.getData();
