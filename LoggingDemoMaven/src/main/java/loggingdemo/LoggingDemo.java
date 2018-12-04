@@ -54,20 +54,19 @@ public class LoggingDemo {
     private void addHandlers() throws IOException {
         LOGGER.addHandler(new ConsoleHandler());
         if (domain.configuration.Conf.PRODUCTION) {
+            // see: http://tutorials.jenkov.com/java-logging/handlers.html
             FileHandler handler = new FileHandler(domain.configuration.Conf.LOG_FILE_PATH);
             handler.setFormatter(new SimpleFormatter());
             handler.setFormatter(new VerySimpleFormatter());
             LOGGER.addHandler(handler);
 
         } else {
-            FileHandler handler = new FileHandler("loggingDemo-log.%u.%g.txt"); // see: http://tutorials.jenkov.com/java-logging/handlers.html
+//          Logfile at root folder of the project.
+            FileHandler handler = new FileHandler("loggingDemo-log.%u.%g.txt"); 
             handler.setFormatter(new VerySimpleFormatter());
             LOGGER.addHandler(handler);
         }
-        //Also available is:
-        //StreamHandler - writes the log to any outputstream
-        //SocketHandler - writes the log over TCP to a network host
-        //MemoryHandler - keeps the log in memory like a buffer untill the buffer is full and then writes the log to a target handler.
+        
     }
 
     private class VerySimpleFormatter extends Formatter {
